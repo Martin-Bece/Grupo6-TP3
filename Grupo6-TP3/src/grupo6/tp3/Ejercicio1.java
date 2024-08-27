@@ -29,7 +29,7 @@ public class Ejercicio1 extends javax.swing.JFrame {
 
         jDialog1 = new javax.swing.JDialog();
         jPanel2 = new javax.swing.JPanel();
-        jLabel1 = new javax.swing.JLabel();
+        jlBienvenida = new javax.swing.JLabel();
         jPanel1 = new javax.swing.JPanel();
         jlUsuario = new javax.swing.JLabel();
         jlContraseña = new javax.swing.JLabel();
@@ -38,13 +38,16 @@ public class Ejercicio1 extends javax.swing.JFrame {
         tfUsuario = new javax.swing.JTextField();
 
         jDialog1.setTitle("Bienvenida");
+        jDialog1.setBackground(new java.awt.Color(204, 255, 255));
         jDialog1.setLocation(new java.awt.Point(600, 300));
         jDialog1.setMinimumSize(new java.awt.Dimension(200, 150));
         jDialog1.setPreferredSize(new java.awt.Dimension(200, 200));
 
-        jLabel1.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
-        jLabel1.setText("BIENVENIDO DENUEVO");
-        jLabel1.setAlignmentX(0.5F);
+        jPanel2.setBackground(new java.awt.Color(153, 255, 255));
+
+        jlBienvenida.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        jlBienvenida.setText("BIENVENIDO DENUEVO");
+        jlBienvenida.setAlignmentX(0.5F);
 
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
         jPanel2.setLayout(jPanel2Layout);
@@ -52,14 +55,14 @@ public class Ejercicio1 extends javax.swing.JFrame {
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
                 .addContainerGap(22, Short.MAX_VALUE)
-                .addComponent(jLabel1)
+                .addComponent(jlBienvenida)
                 .addContainerGap())
         );
         jPanel2Layout.setVerticalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 84, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(jlBienvenida, javax.swing.GroupLayout.PREFERRED_SIZE, 84, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap())
         );
 
@@ -68,9 +71,8 @@ public class Ejercicio1 extends javax.swing.JFrame {
         jDialog1Layout.setHorizontalGroup(
             jDialog1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jDialog1Layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
         );
         jDialog1Layout.setVerticalGroup(
             jDialog1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -79,6 +81,9 @@ public class Ejercicio1 extends javax.swing.JFrame {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("Credenciales");
+        setBackground(new java.awt.Color(102, 255, 255));
+
+        jPanel1.setBackground(new java.awt.Color(153, 255, 255));
 
         jlUsuario.setText("Usuario:");
 
@@ -150,6 +155,10 @@ public class Ejercicio1 extends javax.swing.JFrame {
     private void jbVerificarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbVerificarActionPerformed
         if ((tfUsuario.getText().equals("alumno@ulp.edu.ar"))&& (pfContraseña.getText().equals("12345678"))) {
             jDialog1.setVisible(true);
+        }else{
+            jlBienvenida.setText("Usuario y/o contraseña incorrectos");
+            jDialog1.setSize(300, 150);
+            jDialog1.setVisible(true);
         }
     }//GEN-LAST:event_jbVerificarActionPerformed
 
@@ -190,10 +199,10 @@ public class Ejercicio1 extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JDialog jDialog1;
-    private javax.swing.JLabel jLabel1;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JButton jbVerificar;
+    private javax.swing.JLabel jlBienvenida;
     private javax.swing.JLabel jlContraseña;
     private javax.swing.JLabel jlUsuario;
     private javax.swing.JPasswordField pfContraseña;
