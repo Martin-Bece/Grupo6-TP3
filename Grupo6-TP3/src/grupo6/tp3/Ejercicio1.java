@@ -46,7 +46,6 @@ public class Ejercicio1 extends javax.swing.JFrame {
         jDialog1.setBackground(new java.awt.Color(255, 255, 255));
         jDialog1.setLocation(new java.awt.Point(600, 300));
         jDialog1.setMinimumSize(new java.awt.Dimension(200, 150));
-        jDialog1.setPreferredSize(new java.awt.Dimension(200, 200));
 
         jPanel2.setBackground(new java.awt.Color(255, 255, 255));
 
@@ -80,6 +79,8 @@ public class Ejercicio1 extends javax.swing.JFrame {
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("Credenciales");
         setBackground(new java.awt.Color(0, 0, 0));
+        setMaximumSize(new java.awt.Dimension(412, 353));
+        setMinimumSize(new java.awt.Dimension(412, 353));
 
         jLabel1.setFont(new java.awt.Font("Arial Black", 1, 18)); // NOI18N
         jLabel1.setForeground(new java.awt.Color(0, 0, 0));
@@ -212,7 +213,8 @@ public class Ejercicio1 extends javax.swing.JFrame {
     private void jbVerificarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbVerificarActionPerformed
         if ((tfUsuario.getText().equals("alumno@ulp.edu.ar"))&& (pfContraseña.getText().equals("12345678"))) {
             jDialog1.setVisible(true);
-        }else{
+        }
+        if ((!tfUsuario.getText().equals("alumno@ulp.edu.ar"))&& (!pfContraseña.getText().equals("12345678"))){
             jlBienvenida.setText("Usuario y/o contraseña incorrectos");
             jDialog1.setSize(300, 150);
             jDialog1.setVisible(true);
