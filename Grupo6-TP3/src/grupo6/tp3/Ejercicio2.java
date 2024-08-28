@@ -78,6 +78,7 @@ public class Ejercicio2 extends javax.swing.JFrame {
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("De Celsius a Farenheit");
         setBackground(new java.awt.Color(51, 51, 255));
+        setResizable(false);
 
         jLabel2.setFont(new java.awt.Font("Arial", 1, 14)); // NOI18N
         jLabel2.setText("Ingrese temperatura en grados Celsius");
