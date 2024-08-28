@@ -5,6 +5,8 @@
  */
 package grupo6.tp3;
 
+import javax.swing.JOptionPane;
+
 /**
  *
  * @author Mila
@@ -27,53 +29,12 @@ public class Ejercicio2 extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        jDialog1 = new javax.swing.JDialog();
-        JlRespuesta = new javax.swing.JLabel();
-        jbAceptar = new javax.swing.JButton();
         jPanel1 = new javax.swing.JPanel();
         jLabel2 = new javax.swing.JLabel();
         jPanel2 = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
         TfGrados = new javax.swing.JTextField();
         JbConvertir = new javax.swing.JButton();
-
-        jDialog1.setIconImage(null);
-        jDialog1.setLocation(new java.awt.Point(760, 500));
-
-        JlRespuesta.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/icons8-magnifying-glass-tilted-right-48.png"))); // NOI18N
-
-        jbAceptar.setText("Aceptar");
-        jbAceptar.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jbAceptarActionPerformed(evt);
-            }
-        });
-
-        javax.swing.GroupLayout jDialog1Layout = new javax.swing.GroupLayout(jDialog1.getContentPane());
-        jDialog1.getContentPane().setLayout(jDialog1Layout);
-        jDialog1Layout.setHorizontalGroup(
-            jDialog1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jDialog1Layout.createSequentialGroup()
-                .addGap(41, 41, 41)
-                .addGroup(jDialog1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(JlRespuesta, javax.swing.GroupLayout.PREFERRED_SIZE, 356, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jDialog1Layout.createSequentialGroup()
-                        .addComponent(jbAceptar, javax.swing.GroupLayout.PREFERRED_SIZE, 87, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(32, 32, 32)))
-                .addContainerGap(42, Short.MAX_VALUE))
-        );
-        jDialog1Layout.setVerticalGroup(
-            jDialog1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jDialog1Layout.createSequentialGroup()
-                .addGap(21, 21, 21)
-                .addComponent(JlRespuesta)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jbAceptar, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(16, Short.MAX_VALUE))
-        );
-
-        jDialog1.getAccessibleContext().setAccessibleDescription("");
-        jDialog1.getAccessibleContext().setAccessibleParent(null);
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("De Celsius a Farenheit");
@@ -180,17 +141,16 @@ public class Ejercicio2 extends javax.swing.JFrame {
     }//GEN-LAST:event_TfGradosActionPerformed
 
     private void JbConvertirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_JbConvertirActionPerformed
+        try{
         double celsius = Double.parseDouble(TfGrados.getText());
         double respuesta = celsius * 9.0 / 5.0 + 32;
-        jDialog1.setVisible(true);
-        jDialog1.setSize(400, 150);
-        jDialog1.setTitle("Mensaje");
-        JlRespuesta.setText("La temperatura en grados Farenheit es: "+respuesta);
+        JOptionPane.showMessageDialog(this, "La temperatura en grados Farenheit es: "+respuesta);
+        TfGrados.setText("");
+        }catch(NumberFormatException nf){
+            JOptionPane.showMessageDialog(this, "Solo se pueden ingresar numeros");
+            TfGrados.setText("");
+        }
     }//GEN-LAST:event_JbConvertirActionPerformed
-
-    private void jbAceptarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbAceptarActionPerformed
-        this.jDialog1.dispose();
-    }//GEN-LAST:event_jbAceptarActionPerformed
 
     /**
      * @param args the command line arguments
@@ -229,13 +189,10 @@ public class Ejercicio2 extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton JbConvertir;
-    private javax.swing.JLabel JlRespuesta;
     private javax.swing.JTextField TfGrados;
-    private javax.swing.JDialog jDialog1;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
-    private javax.swing.JButton jbAceptar;
     // End of variables declaration//GEN-END:variables
 }
